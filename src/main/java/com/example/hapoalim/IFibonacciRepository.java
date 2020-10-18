@@ -3,14 +3,17 @@ package com.example.hapoalim;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
 public class IFibonacciRepository {
 
+	@Autowired
 	private IFibonacciCalculator fc;
 
-	private Map<Integer, Long> fibValues = new HashMap<Integer, Long>();
+	protected Map<Integer, Long> fibValues = new HashMap<Integer, Long>();
 
-	public IFibonacciRepository(IFibonacciCalculator fibonacciCalculator) {
-		this.fc = fibonacciCalculator;
+	public IFibonacciRepository() {
 	}
 
 	public long getByIndex(int index) throws invalidInputException {
@@ -21,12 +24,16 @@ public class IFibonacciRepository {
 		if (value == 0) {
 			throw new invalidInputException();
 		}
-		add(index, value);
+		print();
 		return value;
 
 	}
 
 	public void add(int index, long value) {
 		fibValues.put(index, value);
+	}
+
+	public void print() {
+		System.out.println(fibValues);
 	}
 }

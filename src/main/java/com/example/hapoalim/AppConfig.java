@@ -8,7 +8,7 @@ public class AppConfig {
 
 	@Bean
 	public IFibonacciRepository fibonacciRepository() {
-		return new IFibonacciRepository(fibonacciCalculator());
+		return new IFibonacciRepository();
 	}
 	
 	@Bean
