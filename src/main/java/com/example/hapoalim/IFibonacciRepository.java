@@ -24,7 +24,6 @@ public class IFibonacciRepository {
 		if (value == 0) {
 			throw new invalidInputException();
 		}
-		print();
 		return value;
 
 	}
@@ -33,7 +32,4 @@ public class IFibonacciRepository {
 		fibValues.put(index, value);
 	}
 
-	public void print() {
-		System.out.println(fibValues);
-	}
 }

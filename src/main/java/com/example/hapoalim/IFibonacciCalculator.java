@@ -14,7 +14,7 @@ public class IFibonacciCalculator {
 	long sum = 0;
 	long f1 = 1;
 	long f2 = 1;
-	int lastIndex = 2;
+	int lastCalculatedIndex = 2;
 
 	public long calculateByIndex(int index) {
 		
@@ -29,12 +29,11 @@ public class IFibonacciCalculator {
 		}
 
 		// calculate fibonacci value by index and store all values calculated
-		for (int i = lastIndex; i < index; i++) {
+		for (int i = lastCalculatedIndex; i < index; i++) {
 			sum = f1 + f2;
 			f1 = f2;
 			f2 = sum;
-			fr.add(lastIndex + 1, sum);
-			lastIndex++;
+			fr.add(++lastCalculatedIndex, sum);
 		}
 		return f2;
 	}
